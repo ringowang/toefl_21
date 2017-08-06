@@ -8,7 +8,7 @@
             <ul class="nav navbar-nav">
                 <li><%= link_to("很不熟", "#") %></li>
                 <li><%= link_to("不熟", '#') %></li>
-                <li><%= link_to("不熟", '#') %></li>
+                <li><%= link_to("熟悉", '#') %></li>
             </ul>
         </nav>
     </div>
@@ -22,15 +22,15 @@
       <col class="col-md-1">
       <col class="col-md-1">
       <col class="col-md-1">
-      <col class="col-md-3">
-      <col class="col-md-3">
+      <col class="col-md-1">
+      <col class="col-md-5">
   </colgroup>
   <thead>
     <tr>
       <th>单词</th>
       <th>记住了？</th>
       <th>权重</th>
-      <th>我是分隔符</th>
+      <th>显示释义</th>
       <th>释义</th>
     </tr>
   </thead>
@@ -41,8 +41,8 @@
         <td><%= word.content %></td>
         <td><%= 1 %></td>
         <td><%= word.weight %></td>
-        <td>-----</td>
-        <td><%= word.meaning %></td>
+        <td>就看一眼</td>
+        <td><p hidden><%= word.meaning %></p></td>
       </tr>
     <% end %>
   </tbody>
@@ -50,3 +50,29 @@
 
 <br>
 <%= will_paginate @words %>
+
+<script>
+$(document).ready(function(){
+  $('table tr').each(function(){
+    $(this).children().eq(3).click(function(){
+      $(this).next().children().toggle();
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('table th').eq(3).click(function(){
+    $('table tr').each(function(){
+      $(this).children().eq(4).children().show()
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('table th').eq(4).click(function(){
+    $('table tr').each(function(){
+      $(this).children().eq(4).children().hide()
+    });
+  });
+});
+</script>

@@ -16,3 +16,10 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+table{
+    table-layout: fixed;    
+}
+table tr {
+    height: 50px;
+}

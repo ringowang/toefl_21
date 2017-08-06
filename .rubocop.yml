@@ -1,0 +1,13 @@
+AllCops:
+  
+  Exclude:
+    - 'lib/**/*'
+    - 'bin/*'
+    - 'spec/dummy/**/*'
+    - 'db/schema.rb'
+    - 'Rakefile'
+    - 'bundle/**/*'
+Metrics/LineLength:
+    Max: 120
+Style/AsciiComments:
+    Enabled: false

@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170805181528) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "units", force: :cascade do |t|
     t.integer "chapter"
     t.datetime "created_at", null: false
@@ -22,10 +25,11 @@ ActiveRecord::Schema.define(version: 20170805181528) do
     t.string "content", null: false
     t.string "meaning", null: false
     t.integer "weight", default: 0, null: false
-    t.integer "unit_id"
+    t.bigint "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_words_on_unit_id"
   end
 
+  add_foreign_key "words", "units"
 end

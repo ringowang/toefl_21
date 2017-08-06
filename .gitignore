@@ -21,3 +21,8 @@
 /yarn-error.log
 
 .byebug_history
+
+/config/database.yml
+/config/secrets.yml
+/config/email.yml
+/config/local_env.yml

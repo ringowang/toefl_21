@@ -20,10 +20,10 @@
 <table class="table table-striped">
   <colgroup>
       <col class="col-md-1">
+      <col class="col-md-2">
       <col class="col-md-1">
       <col class="col-md-1">
-      <col class="col-md-1">
-      <col class="col-md-5">
+      <col class="col-md-6">
   </colgroup>
   <thead>
     <tr>
@@ -39,7 +39,10 @@
     <% @words.each do |word| %>
       <tr>
         <td><%= word.content %></td>
-        <td><%= 1 %></td>
+        <td>
+          <%= button_to "没记住", not_remember_word_path(word_id: word.id), :method => "put", remote: true, class: "btn btn-default btn-xs", style: "float: left" %> 
+          <%= button_to "记住了", remember_word_path(word_id: word.id), :method => "put", remote: true, class: "btn btn-default btn-xs", style: "float: right" %>
+        </td>
         <td><%= word.weight %></td>
         <td>就看一眼</td>
         <td><p hidden><%= word.meaning %></p></td>

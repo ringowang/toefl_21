@@ -16,7 +16,7 @@
 
 <h2>第<%= @chapter %>章节</h2>
 <br>
-
+<%= will_paginate @words, renderer: BootstrapPagination::Rails %>
 <table class="table table-striped">
   <colgroup>
       <col class="col-md-1">
@@ -47,9 +47,7 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= will_paginate @words %>
+<%= will_paginate @words, renderer: BootstrapPagination::Rails %>
 
 <script>
 $(document).ready(function(){

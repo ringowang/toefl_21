@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   resources :words, only: [:index, :show] do
     put :remember, on: :member
     put :not_remember, on: :member
-    put :show_meaning, on: :member
   end
 end

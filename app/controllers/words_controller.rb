@@ -14,9 +14,11 @@ class WordsController < ApplicationController
     @words = unit.words.order('lower(content)').paginate(page: params[:page], per_page: 30)
     @chapter = unit.chapter
     @this_word = Word.find_by_id(params[:word_id])
-    @this_word.weight -= 1
-    @this_word.save unless @this_word.weight < 0
-    redirect_to request.referrer
+    if @this_word.weight > 0
+      @this_word.weight -= 1
+      @this_word.save
+    end
+    render :show
   end
 
   def not_remember
@@ -25,7 +27,7 @@ class WordsController < ApplicationController
     @chapter = unit.chapter
     @this_word = Word.find_by_id(params[:word_id])
     @this_word.weight += 1
-    @this_word.save unless @this_word.weight < 0
-    redirect_to request.referrer
+    @this_word.save
+    render :show
   end
 end

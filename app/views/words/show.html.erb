@@ -37,7 +37,7 @@
 
   <tbody>
     <% @words.each do |word| %>
-      <tr>
+      <tr id="word_<%= word.id %>">
         <td><%= word.content %></td>
         <td>
           <%= button_to "没记住", not_remember_word_path(word_id: word.id), :method => "put", remote: true, class: "btn btn-default btn-xs", style: "float: left" %> 

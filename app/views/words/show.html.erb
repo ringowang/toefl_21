@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/words">所有单词</a>
+        </div>
+
+        <nav>
+            <ul class="nav navbar-nav">
+                <li><%= link_to("很不熟", "#") %></li>
+                <li><%= link_to("不熟", '#') %></li>
+                <li><%= link_to("不熟", '#') %></li>
+            </ul>
+        </nav>
+    </div>
+</nav>
+
+<h2>第<%= @chapter %>章节</h2>
+<br>
+
+<table class="table table-striped">
+  <colgroup>
+      <col class="col-md-1">
+      <col class="col-md-1">
+      <col class="col-md-1">
+      <col class="col-md-3">
+      <col class="col-md-3">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>单词</th>
+      <th>记住了？</th>
+      <th>权重</th>
+      <th>我是分隔符</th>
+      <th>释义</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.content %></td>
+        <td><%= 1 %></td>
+        <td><%= word.weight %></td>
+        <td>-----</td>
+        <td><%= word.meaning %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @words %>

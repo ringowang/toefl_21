@@ -11,6 +11,7 @@
                 <li><%= link_to("很不熟", word_path(id: @chapter, status: 'do_not_know')) %></li>
                 <li><%= link_to("不熟", word_path(id: @chapter, status: 'barely_know')) %></li>
                 <li><%= link_to("熟悉", word_path(id: @chapter, status: 'got_it')) %></li>
+                <li><%= link_to("添加单词", new_word_path) %></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -19,7 +20,7 @@
                     章节选取 <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <% (1..21).each do |chapter| %>
+                    <% (1..22).each do |chapter| %>
                       <li><%= link_to(chapter, word_path(id: chapter)) %></li>
                     <% end %>
                   </ul>

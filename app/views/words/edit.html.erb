@@ -1,0 +1,6 @@
+<h1>Editing Word</h1>
+
+<%= render 'form', word: @word %>
+
+<%= link_to '首页', root_path %>
+<%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' } %>

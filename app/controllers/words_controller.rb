@@ -20,7 +20,7 @@ class WordsController < ApplicationController
 
   def not_remember
     @this_word = Word.find_by_id(params[:word_id])
-    @this_word.weight += 1
+    @this_word.weight += 2
     @this_word.save
     render :show
   end

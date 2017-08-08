@@ -7,6 +7,7 @@ class WordsController < ApplicationController
   end
 
   def show
+    session[:return_to] = nil
   end
 
   def remember
@@ -29,12 +30,12 @@ class WordsController < ApplicationController
   # GET /words/new
   def new
     @word = Word.new
-    session[:return_to] ||= request.referer
+    session[:return_to] ||= request.referer unless request.referer == request.original_url
   end
 
   # GET /words/1/edit
   def edit
-    session[:return_to] ||= request.referer
+    session[:return_to] ||= request.referer unless request.referer == request.original_url
   end
 
   # POST /words

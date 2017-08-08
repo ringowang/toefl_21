@@ -3,7 +3,7 @@
 <%= render 'form', word: @word %>
 
 <% if session[:return_to] %>
-  <%= link_to '返回', session.delete(:return_to) %>
+  <%= link_to '返回', session[:return_to] %>
 <% end %>
 <br>
 <%= link_to '首页', root_path %>

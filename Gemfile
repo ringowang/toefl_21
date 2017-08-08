@@ -41,6 +41,7 @@ gem 'will_paginate-bootstrap'
 gem 'pg', '~> 0.18'
 gem 'nokogiri'
 gem 'listen', '~> 3.0.5'
+gem 'bootstrap_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

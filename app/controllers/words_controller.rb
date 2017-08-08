@@ -93,6 +93,8 @@ class WordsController < ApplicationController
         @words = @words.where('weight >= 2')
       when 'barely_know'
         @words = @words.where('weight >= 1')
+      when 'unbelievable'
+        @words = @words.where('weight >= 4')
       when 'got_it'
         @words = @words.where('weight = 0')
       end

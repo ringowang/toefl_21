@@ -2,5 +2,9 @@
 
 <%= render 'form', word: @word %>
 
+<%= link_to '返回', session.delete(:return_to) %>
+<br>
+<br>
 <%= link_to '首页', root_path %>
+<br>
 <%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' } %>

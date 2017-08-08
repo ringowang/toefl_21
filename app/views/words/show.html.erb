@@ -59,7 +59,7 @@
           <%= button_to "没记住", not_remember_word_path(word_id: word.id), :method => "put", remote: true, class: "btn btn-default btn-xs", style: "float: left" %> 
           <%= button_to "记住了", remember_word_path(word_id: word.id), :method => "put", remote: true, class: "btn btn-default btn-xs", style: "float: right" %>
         </td>
-        <td><%= word.weight %></td>
+        <td><%= link_to(word.weight, edit_word_path(word)) %></td>
         <td>就看一眼</td>
         <td><p hidden><%= word.meaning %></p></td>
       </tr>

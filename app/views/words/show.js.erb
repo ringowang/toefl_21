@@ -1,1 +1,1 @@
-$("#word_<%= @this_word.id %>").children().eq(2).replaceWith("<td><%= @this_word.weight %></td>")
+$("#word_<%= @this_word.id %>").children().eq(2).replaceWith("<td><a href=\"/words/<%= @this_word.id %>/edit\"><%= @this_word.weight %></a></td>")

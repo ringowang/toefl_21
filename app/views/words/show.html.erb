@@ -61,7 +61,7 @@
         </td>
         <td><%= link_to(word.weight, edit_word_path(word)) %></td>
         <td>就看一眼</td>
-        <td><p hidden><%= word.meaning %></p></td>
+        <td><span hidden><%= simple_format(word.meaning) %></span></td>
       </tr>
     <% end %>
   </tbody>

@@ -44,7 +44,7 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to session.delete(:return_to), notice: 'Word was successfully created.' }
+        format.html { redirect_to session.delete(:return_to) || new_word_path, notice: 'Word was successfully created.' }
         format.json { render :show, status: :created, location: @word }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class WordsController < ApplicationController
   def update
     respond_to do |format|
       if @word.update(word_params)
-        format.html { redirect_to session.delete(:return_to), notice: 'Word was successfully updated.' }
+        format.html { redirect_to session.delete(:return_to) || edit_word_path(@word), notice: 'Word was successfully updated.' }
         format.json { render :show, status: :ok, location: @word }
       else
         format.html { render :edit }
@@ -72,7 +72,7 @@ class WordsController < ApplicationController
   def destroy
     @word.destroy
     respond_to do |format|
-      format.html { redirect_to session.delete(:return_to), notice: 'Word was successfully destroyed.' }
+      format.html { redirect_to session.delete(:return_to) || root_path, notice: 'Word was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -2,6 +2,9 @@
 
 <%= render 'form', word: @word %>
 
-<%= link_to '返回', session.delete(:return_to) %>
+<% if session[:return_to] %>
+  <%= link_to '返回', session.delete(:return_to) %>
+<% end %>
+
 <br>
 <%= link_to '首页', root_path %>

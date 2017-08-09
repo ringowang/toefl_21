@@ -7,11 +7,12 @@
         <nav>
             <ul class="nav navbar-nav">
                 <li><%= link_to("全部", word_path(id: @chapter, status: 'all')) %></li>
-                <li><%= link_to("根本不会", word_path(id: @chapter, status: 'unbelievable')) %></li>
-                <li><%= link_to("极其不熟", word_path(id: @chapter, status: 'never_know')) %></li>
+                <li><%= link_to("Seven Hells", word_path(id: @chapter, status: 'for_gods_sake')) %></li>
+                <li><%= link_to("完全不会", word_path(id: @chapter, status: 'fatal')) %></li>
+                <li><%= link_to("不会", word_path(id: @chapter, status: 'unbelievable')) %></li>
+                <li><%= link_to("超不熟", word_path(id: @chapter, status: 'never_know')) %></li>
                 <li><%= link_to("很不熟", word_path(id: @chapter, status: 'do_not_know')) %></li>
                 <li><%= link_to("不熟", word_path(id: @chapter, status: 'barely_know')) %></li>
-                <li><%= link_to("熟悉", word_path(id: @chapter, status: 'got_it')) %></li>
                 <li><%= link_to("添加单词", new_word_path) %></li>
             </ul>
 

@@ -95,8 +95,10 @@ class WordsController < ApplicationController
         @words = @words.where('weight >= 1')
       when 'unbelievable'
         @words = @words.where('weight >= 4')
-      when 'got_it'
-        @words = @words.where('weight = 0')
+      when 'fatal'
+        @words = @words.where('weight >= 5')
+      when 'for_gods_sake'
+        @words = @words.where('weight >= 7')
       end
     end
     @words = @words.order('lower(content)').paginate(page: params[:page], per_page: 30)

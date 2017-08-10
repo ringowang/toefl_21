@@ -7,6 +7,7 @@
         <nav>
             <ul class="nav navbar-nav">
                 <li><%= link_to("全部", word_path(id: @chapter, status: 'all')) %></li>
+                <li><%= link_to(">9", word_path(id: @chapter, status: 'weight_9')) %></li>
                 <li><%= link_to("Seven Hells", word_path(id: @chapter, status: 'for_gods_sake')) %></li>
                 <li><%= link_to("完全不会", word_path(id: @chapter, status: 'fatal')) %></li>
                 <li><%= link_to("不会", word_path(id: @chapter, status: 'unbelievable')) %></li>
